@@ -4,6 +4,7 @@ const app = express()
 const PORT = 3000
 
 app.all('*', async (req, res) => {
+  console.log(`express called with ${req.method}:${req.path}`)
   res.json({
     method: req.method,
     path: req.path,
