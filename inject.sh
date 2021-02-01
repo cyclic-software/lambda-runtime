@@ -12,6 +12,6 @@ ls -l "$APP_SRC"/
 
 ls -l "$APP_SRC"/*
 
-echo "moving $APP_SRC to src/*"
+echo "moving $APP_SRC to app/*"
 
-cp -r "$APP_SRC" src/
+cp -r "$APP_SRC" app/

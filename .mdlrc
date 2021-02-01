@@ -1,4 +1,1 @@
-all
-
-# Ignore line length in code blocks.
-rule 'MD013', code_blocks: false
+style '_dot/mdl_style.rb'

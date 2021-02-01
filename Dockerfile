@@ -1,9 +1,13 @@
 FROM public.ecr.aws/lambda/nodejs:12
 
-ADD ./src ./src
+# combine both src and local-app
+ADD ./src ./
+ADD ./app ./
 
-# need to pull in package.json or run npm install
+# install dependencies
+RUN npm install
 
-ADD ./node_modules ./node_modules
+# needed for _proxy.js
+RUN npm install axios
 
 CMD ["src/_proxy.handler"]

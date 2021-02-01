@@ -8,3 +8,10 @@ curl -i -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations"
 ```
 
 Prune: `docker container prune`
+
+Local run:
+
+```sh
+node start
+curl -i -XPUT --header "Content-Type: application/json" --data '{"account":"xyz"}' https://localhost:3000
+```
