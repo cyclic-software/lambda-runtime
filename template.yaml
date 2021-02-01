@@ -14,6 +14,9 @@ Resources:
   AppApi:
     Type: AWS::Serverless::HttpApi
     Properties:
+      AccessLogSettings:
+        DestinationArn: !Sub 'arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:${AppApi}-access-logs'
+        Format: $context.identity.sourceIp - - [$context.requestTime] "$context.httpMethod $context.routeKey $context.protocol" $context.status $context.responseLength $context.requestId $context.authorizer.error
       Auth:
         Authorizers:
           Auth0Identity:
