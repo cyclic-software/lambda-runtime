@@ -11,15 +11,9 @@ exports.handler = async function(event, context) {
       baseURL: "http://localhost:3000/",
       body: event.body,
       headers: event.headers,
-      method: event.method,
+      method: event.requestContext.http.method,
       params: event.params,
-      url: event.path,
+      url: event.requestContext.http.path,
     })
   ).data
 }
-
-// exports.handler = async function(event, context) {
-//   console.log(`Event recieved: ${JSON.stringify(event)}`)
-//   console.log(`process.env: ${JSON.stringify(process.env)}`)
-//   return process.env
-// }

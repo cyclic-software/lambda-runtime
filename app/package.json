@@ -11,5 +11,6 @@
   },
   "author": "Tester Testeroo",
   "license": "ISC",
-  "description": "Sample Test app for locally testing Lambda runtime"
+  "description": "Sample Test app for locally testing Lambda runtime",
+  "repository": "https://github.com/cyclic-software/lambda-runtime"
 }

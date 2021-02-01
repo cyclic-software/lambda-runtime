@@ -10,4 +10,4 @@ RUN npm install
 # needed for _proxy.js
 RUN npm install axios
 
-CMD ["src/_proxy.handler"]
+CMD ["_proxy.handler"]

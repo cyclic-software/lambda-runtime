@@ -24,4 +24,5 @@ Prune: `docker container prune`
 
 ```sh
 sam build --use-container
+sam local
 ```

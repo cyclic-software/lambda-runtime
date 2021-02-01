@@ -1,0 +1,10 @@
+{
+  "callbackWaitsForEmptyEventLoop": true,
+  "functionVersion": "$LATEST",
+  "functionName": "WrappedLambdaStack-AppLambda-8N38IQEM5JR",
+  "memoryLimitInMB": "128",
+  "logGroupName": "/aws/lambda/WrappedLambdaStack-AppLambda-8N38IQEM5JR",
+  "logStreamName": "2021/02/01/[$LATEST]b6d16e2c169a460a9691d40ce9174c08",
+  "invokedFunctionArn": "arn:aws:lambda:us-east-2:829947040538:function:WrappedLambdaStack-AppLambda-8N38IQEM5JR",
+  "awsRequestId": "dee3f5c6-90aa-4007-8c57-a37a504c0043"
+}
