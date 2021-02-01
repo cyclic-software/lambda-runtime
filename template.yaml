@@ -11,11 +11,22 @@ Globals:
 
 Resources:
 
+  AppApiAccessLog:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      RetentionInDays: 7
+
+  AppFunctionLog:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      RetentionInDays: 7
+      LogGroupName: !Sub '/aws/lambda/${AppLambda}'
+
   AppApi:
     Type: AWS::Serverless::HttpApi
     Properties:
       AccessLogSettings:
-        DestinationArn: !Sub 'arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:${AppApi}-access-logs'
+        DestinationArn: !GetAtt AppApiAccessLog.Arn
         Format: $context.identity.sourceIp - - [$context.requestTime] "$context.httpMethod $context.routeKey $context.protocol" $context.status $context.responseLength $context.requestId $context.authorizer.error
       Auth:
         Authorizers:
@@ -61,3 +72,9 @@ Outputs:
   AppLambdaIamRole:
     Description: "Implicit IAM Role created for App Lambda"
     Value: !GetAtt AppLambdaRole.Arn
+  AppApiAccessLog:
+    Description: "API Gateway access logs"
+    Value: !GetAtt AppApiAccessLog.Arn
+  AppFunctionLog:
+    Description: "Lambda Logs for App"
+    Value: !GetAtt AppFunctionLog.Arn
