@@ -16,7 +16,16 @@ Resources:
       Dockerfile: Dockerfile
       DockerContext: ./
     Properties:
-      # FunctionName: !Sub "ContainerFunction${Namespace}"
+      Auth:
+        Authorizers:
+          Auth0Identity:
+            IdentitySource: $request.header.Authorization
+            JwtConfiguration:
+              audience:
+                - https://auth0-jwt-authorizer
+              issuer: "https://cyclic.us.auth0.com/"
+        DefaultAuthorizer: Auth0Identity
+
       PackageType: Image
       Events: # Both / and /{path} are needed to properly capture all routes
         AppRoot:
