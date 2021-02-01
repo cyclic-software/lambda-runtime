@@ -8,6 +8,7 @@ app.all('*', async (req, res) => {
   res.json({
     method: req.method,
     path: req.path,
+    headers: req.headers,
     now:  new Date().toISOString()
   })
 })
