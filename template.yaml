@@ -10,11 +10,9 @@ Globals:
     Timeout: 3
 
 Resources:
-  AppLambda:
-    Type: AWS::Serverless::Function
-    Metadata:
-      Dockerfile: Dockerfile
-      DockerContext: ./
+
+  MyApi:
+    Type: AWS::Serverless::HttpApi
     Properties:
       Auth:
         Authorizers:
@@ -26,6 +24,12 @@ Resources:
               issuer: "https://cyclic.us.auth0.com/"
         DefaultAuthorizer: Auth0Identity
 
+  AppLambda:
+    Type: AWS::Serverless::Function
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./
+    Properties:
       PackageType: Image
       Events: # Both / and /{path} are needed to properly capture all routes
         AppRoot:
