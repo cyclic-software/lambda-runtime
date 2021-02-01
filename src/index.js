@@ -9,6 +9,7 @@ app.all('*', async (req, res) => {
     method: req.method,
     path: req.path,
     headers: req.headers,
+    message: "response from default echo in gh:/cyclic-software/lambda-runtime/src/index.js",
     now:  new Date().toISOString()
   })
 })

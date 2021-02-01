@@ -14,7 +14,7 @@ Resources:
     Type: AWS::Serverless::Function
     Metadata:
       Dockerfile: Dockerfile
-      DockerContext: ./lambda
+      DockerContext: ./
     Properties:
       # FunctionName: !Sub "ContainerFunction${Namespace}"
       PackageType: Image
