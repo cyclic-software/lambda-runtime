@@ -2,7 +2,7 @@
 
 set -exuo pipefail
 
-echo "Running inject"
+echo "Running $0 expecting app source dir as first arg"
 
 cd "$(dirname "$0")"
 
@@ -12,6 +12,6 @@ ls -l "$APP_SRC"/
 
 ls -l "$APP_SRC"/*
 
-echo "moving $APP_SRC to app/*"
+echo "copying $APP_SRC to app/*"
 
 cp -r "$APP_SRC" app/

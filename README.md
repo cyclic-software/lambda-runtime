@@ -2,6 +2,17 @@
 
 A custom runtime for hosting cyclic apps.
 
+## Running/Testing
+
+### Local node
+
+```sh
+node start
+curl -i -XPUT --header "Content-Type: application/json" --data '{"account":"xyz"}' https://localhost:3000
+```
+
+### Local Docker
+
 ```sh
 docker build --no-cache -t myfunction:latest . && docker run -p 9000:8080 myfunction:latest
 curl -i -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{}'
@@ -9,9 +20,8 @@ curl -i -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations"
 
 Prune: `docker container prune`
 
-Local run:
+### SAM Build (like pipeline)
 
 ```sh
-node start
-curl -i -XPUT --header "Content-Type: application/json" --data '{"account":"xyz"}' https://localhost:3000
+sam build --use-container
 ```
