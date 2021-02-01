@@ -14,4 +14,4 @@ ls -l "$APP_SRC"/*
 
 echo "copying $APP_SRC to app/*"
 
-cp -r "$APP_SRC"/ app/
+cp -R "$APP_SRC"/ app/
