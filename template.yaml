@@ -49,13 +49,13 @@ Resources:
         AppRoot:
           Type: HttpApi # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            ApiId: AppApi
+            ApiId: !Ref AppApi
             Path: /
             Method: any
         AppAny:
           Type: HttpApi # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            ApiId: AppApi
+            ApiId: !Ref AppApi
             Path: /{proxy+}
             Method: any
 
