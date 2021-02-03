@@ -46,18 +46,19 @@ Resources:
     Properties:
       PackageType: Image
       Events: # Both / and /{path} are needed to properly capture all routes
-        AppRoot:
+        AppPublic:
           Type: HttpApi # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
             ApiId: !Ref AppApi
-            Path: /
-            Method: any
+            Auth: NONE
+            Path: /public
+            Method: GET
         AppAny:
           Type: HttpApi # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
             ApiId: !Ref AppApi
-            Path: /{proxy+}
-            Method: any
+            # Path: /{proxy+}
+            # Method: any
 
 Outputs:
   # ServerlessHttpApi is an implicit API created out of Events key under Serverless::Function
