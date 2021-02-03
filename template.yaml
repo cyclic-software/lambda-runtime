@@ -50,8 +50,9 @@ Resources:
           Type: HttpApi # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
             ApiId: !Ref AppApi
-            Auth: NONE
-            Path: /public
+            Auth:
+             Authorizer: NONE
+            Path: /public/{proxy+}
             Method: GET
         AppAny:
           Type: HttpApi # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
