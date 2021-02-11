@@ -9,6 +9,17 @@ Globals:
   Function:
     Timeout: 3
 
+Parameters:
+  JwtAudience:
+    Type: String
+    Description: Aud value for Jwt authorizer (oeqSBxxA9a0nfHkXwzuorkOxcYhEj7SC|https://auth0-jwt-authorizer)
+    Default: 'oeqSBxxA9a0nfHkXwzuorkOxcYhEj7SC'
+
+  JwtIssuer:
+    Type: String
+    Description: Iss value for the Jwt authorizer (https://cyclic.us.auth0.com/)
+    Default: https://cyclic.us.auth0.com/
+
 Resources:
 
   AppApiAccessLog:
@@ -34,8 +45,8 @@ Resources:
             IdentitySource: $request.header.Authorization
             JwtConfiguration:
               audience:
-                - https://auth0-jwt-authorizer
-              issuer: "https://cyclic.us.auth0.com/"
+                - !Ref JwtAudience
+              issuer: !Ref JwtIssuer
         DefaultAuthorizer: Auth0Identity
 
   AppLambda:
