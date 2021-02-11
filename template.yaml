@@ -38,7 +38,7 @@ Resources:
     Properties:
       AccessLogSettings:
         DestinationArn: !GetAtt AppApiAccessLog.Arn
-        Format: $context.identity.sourceIp - - [$context.requestTime] "$context.httpMethod $context.routeKey $context.protocol" $context.status $context.responseLength $context.requestId $context.authorizer.error $context.error.messageString $context.integration.error
+        Format: $context.identity.sourceIp - - [$context.requestTime] "$context.httpMethod $context.path $context.routeKey $context.protocol" $context.status $context.responseLength $context.requestId $context.authorizer.error $context.error.messageString $context.integration.error
       Auth:
         Authorizers:
           Auth0Identity:

@@ -10,10 +10,10 @@ exports.handler = async function(event, context) {
   try {
     const resp = await axios({
       baseURL: "http://localhost:3000/",
-      body: event.body,
+      data: event.body,
       headers: event.headers,
       method: event.requestContext.http.method,
-      params: event.params,
+      // params: event.params,
       url: event.requestContext.http.path,
     })
     console.log(`Success response: ${JSON.stringify(resp.data)}`)
