@@ -56,6 +56,14 @@ Resources:
       DockerContext: ./
     Properties:
       PackageType: Image
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            Sid: AllowAssumptionOfManagementRole
+            Effect: Allow
+            Action: sts:AssumeRole
+            Resource: arn:aws:iam::*:role/cyclic/cyclic-management-role-*
+
       Events: # Both / and /{path} are needed to properly capture all routes
         AppPublic:
           Type: HttpApi # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
