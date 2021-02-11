@@ -1,0 +1,47 @@
+{
+  "version": "2.0",
+  "routeKey": "ANY /{proxy+}",
+  "rawPath": "/error",
+  "rawQueryString": "",
+  "headers": {
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+      "accept-encoding": "gzip, deflate, br",
+      "accept-language": "en-US,en;q=0.9",
+      "content-length": "0",
+      "dnt": "1",
+      "host": "gypkz3mz6b.execute-api.us-east-2.amazonaws.com",
+      "sec-fetch-dest": "document",
+      "sec-fetch-mode": "navigate",
+      "sec-fetch-site": "none",
+      "sec-fetch-user": "?1",
+      "sec-gpc": "1",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36",
+      "x-amzn-trace-id": "Root=1-60182d50-72bfac1834fb871a2d76dbd3",
+      "x-forwarded-for": "96.227.223.110",
+      "x-forwarded-port": "443",
+      "x-forwarded-proto": "https"
+  },
+  "requestContext": {
+      "accountId": "829947040538",
+      "apiId": "gypkz3mz6b",
+      "domainName": "gypkz3mz6b.execute-api.us-east-2.amazonaws.com",
+      "domainPrefix": "gypkz3mz6b",
+      "http": {
+          "method": "POST",
+          "path": "/error",
+          "protocol": "HTTP/1.1",
+          "sourceIp": "96.227.223.110",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36"
+      },
+      "requestId": "aEwEmh8RCYcEQsg=",
+      "routeKey": "ANY /{proxy+}",
+      "stage": "$default",
+      "time": "01/Feb/2021:16:33:20 +0000",
+      "timeEpoch": 1612197200574
+  },
+  "pathParameters": {
+      "proxy": "error"
+  },
+  "isBase64Encoded": false
+}

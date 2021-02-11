@@ -15,7 +15,7 @@ curl -i -XPUT --header "Content-Type: application/json" --data '{"account":"xyz"
 
 ```sh
 docker build --no-cache -t myfunction:latest . && docker run -p 9000:8080 myfunction:latest
-curl -i -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{}'
+curl -i -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d @../lambda-runtime/sample-event.json
 ```
 
 Prune: `docker container prune`
@@ -25,4 +25,11 @@ Prune: `docker container prune`
 ```sh
 sam build --use-container
 sam local
+```
+
+### Release
+
+```sh
+git push
+git push -f --tags refs/tags/stable:refs/tags/stable
 ```
