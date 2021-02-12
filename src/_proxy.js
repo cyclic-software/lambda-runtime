@@ -3,9 +3,9 @@ const axios = require('axios').default;
 require('./index')
 
 exports.handler = async function(event, context) {
-  console.log("calling the server")
-  console.log(`event: ${JSON.stringify(event)}`)
-  console.log(`context: ${JSON.stringify(context)}`)
+  console.log('[proxy] calling the server')
+  console.log(`[proxy] event: ${JSON.stringify(event)}`)
+  console.log(`[proxy] context: ${JSON.stringify(context)}`)
 
   try {
     const resp = await axios({
@@ -16,7 +16,7 @@ exports.handler = async function(event, context) {
       // params: event.params,
       url: event.requestContext.http.path,
     })
-    console.log(`Success response: ${JSON.stringify(resp.data)}`)
+    console.log(`[proxy] Success response: ${JSON.stringify(resp.data)}`)
 
     return resp.data
     // return {
@@ -27,9 +27,9 @@ exports.handler = async function(event, context) {
     // }
   } catch (error) {
     if (error.response) {
-      console.log('Request made, error response.')
+      console.log('[proxy] Request made, error response.')
       // console.log('data: ', error.response.data);
-      console.log('status: ', error.response.status);
+      console.log('[proxy] status: ', error.response.status);
       // console.log('headers: ', error.response.headers);
 
       return {
@@ -40,11 +40,11 @@ exports.handler = async function(event, context) {
       }
 
     } else if (error.request) {
-      console.log('The request was made but no response was received')
-      console.log(error.request);
+      console.log('[proxy] The request was made but no response was received')
+      console.log('[proxy]', error.request);
     } else {
-      console.log('Something happened in setting up the request that triggered an Error')
-      console.log('Error', error.message);
+      console.log('[proxy] Something happened in setting up the request that triggered an Error')
+      console.log('[proxy] Error', error.message);
     }
   }
 }
